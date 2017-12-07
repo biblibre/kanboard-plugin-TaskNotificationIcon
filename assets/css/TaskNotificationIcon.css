@@ -1,0 +1,23 @@
+/* Styles notifications to make them more visible */
+a i.web-notification-icon::after {
+  content: '!';
+  position: absolute;
+  bottom: -5px;
+  color: #FFF;
+  border-radius: 30%;
+  padding: 1px 4px;
+  font-size: 80%;
+  font-weight: bold;
+  right: -4px;
+  background-color: #ec0a0a;
+  text-shadow: 0px 0px #FFF;
+}
+a i.web-notification-icon {
+  color: #333;
+  position: relative;
+}
+
+.task-board-icons-row i.fa-bell-o {
+  color: #ec0a0a;
+  font-size: 1.3em;
+}
