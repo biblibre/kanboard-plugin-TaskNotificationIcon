@@ -2,7 +2,12 @@
     $user_id = $this->app->userSession->getId();
     $notifications = $this->app->userUnreadNotificationModel->getAll($user_id);
     $notifications = array_filter($notifications, function ($notification) use ($task) {
-        return $notification['event_data']['task']['id'] == $task['id'];
+        $event_data = $notification['event_data'];
+        if (isset($event_data['task']) && $event_data['task']['id'] == $task['id']) {
+            return true;
+        }
+
+        return false;
     });
 ?>
 <?php if (!empty($notifications)): ?>
